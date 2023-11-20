@@ -1,8 +1,8 @@
 aktuelle todos/bugfixes nach Prioriät
-2. Value Iteration
+1. Value Iteration
     1. Taxi Env auch zum laufem bringen
     2. Beide Envs visualisieren können
-3. Policy Iteration
+2. Policy Iteration
     1. Taxi Env auch zum laufem bringen
     2. Beide Envs visualisieren können
 3. Q Learning
