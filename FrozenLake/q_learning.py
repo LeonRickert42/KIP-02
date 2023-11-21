@@ -5,7 +5,7 @@ import pickle
 
 
 def run(episodes, is_training=True, render=False):
-    env = gym.make('FrozenLake-v1', map_name="8x8", is_slippery=True, render_mode='human' if render else None)
+    env = gym.make('FrozenLake-v1', map_name="8x8", is_slippery=False, render_mode='human' if render else None)
 
     if (is_training):
         q = np.zeros((env.observation_space.n, env.action_space.n))  # init a 64 x 4 array
@@ -14,7 +14,7 @@ def run(episodes, is_training=True, render=False):
         q = pickle.load(f)
         f.close()
 
-    learning_rate_a = 0.9  # alpha or learning rate
+    learning_rate_a = 0.5  # alpha or learning rate
     discount_factor_g = 0.9  # gamma or discount rate. Near 0: more weight/reward placed on immediate state. Near 1: more on future state.
     epsilon = 1  # 1 = 100% random actions
     epsilon_decay_rate = 0.0001  # epsilon decay rate. 1/0.0001 = 10,000
@@ -66,5 +66,5 @@ def run(episodes, is_training=True, render=False):
 
 if __name__ == '__main__':
     # run(15000)
-
-    run(1000, is_training=True, render=True)
+    #run(15000)
+    run(1, is_training=False, render=True)
